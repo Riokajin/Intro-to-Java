@@ -34,7 +34,7 @@ class Account {
     
     // Method with parameter and return
     
-  
+}
  
 // ABSTRACT CLASS EXAMPLE
  
