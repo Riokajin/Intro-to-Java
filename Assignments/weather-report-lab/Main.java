@@ -45,6 +45,7 @@ public class Main {
  
  
         // TODO: Prompt user and read input
+        
         System.out.print("Enter today's weather conditions: ");
         todaysWeather = input.nextLine();
         System.out.print("Enter possibility of precipitation: ");
@@ -57,7 +58,20 @@ public class Main {
         tempLow = input.nextInt();
         System.out.print("Enter UV index: ");
         uvIndex = input.nextInt();
-        // TODO: Use loops to validate high/low temperatures and UV index
+        
+        // TODO: Use loops to validate high/low temperatures and UV index       
+
+        while (tempLow > tempHigh) {
+            System.out.print("Low temperature cannot be higher than high temperature. Please re-enter low temperature: ");
+            tempLow = input.nextInt();
+        }        
+        
+        while (uvIndex < 0) {
+            System.out.print("UV index cannot be negative. Please re-enter UV index: ");
+            uvIndex = input.nextInt();
+        }
+        
+
  
  
         /*
@@ -67,6 +81,8 @@ public class Main {
  
  
         // TODO: Apply typecasting where necessary
+        int highTempInt = (int) tempHigh;
+        int lowTempInt = (int) tempLow;
  
  
         /*
@@ -79,6 +95,16 @@ public class Main {
  
  
         // TODO: Write if, if-else, or nested if statements to display tips
+        String tips = "";
+        if (uvIndex >= 6) {
+            tips += "Use sunscreen. ";
+        }
+        if (precipitation.equalsIgnoreCase("high")) {
+            tips += "carry an umbrella. ";
+        }
+        if (Integer.parseInt(windSpeed) > 40) {
+            tips += "Windy conditions expected. ";
+        }
  
  
         /*
