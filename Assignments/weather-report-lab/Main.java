@@ -28,6 +28,12 @@ public class Main {
  
  
         // TODO: Declare your variables here
+        String todaysWeather;
+        String precipitation;
+        String windSpeed;
+        int tempHigh;
+        int tempLow;
+        int uvIndex;
  
  
         /*
