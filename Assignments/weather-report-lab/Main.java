@@ -97,13 +97,13 @@ public class Main {
         // TODO: Write if, if-else, or nested if statements to display tips
         String tips = "";
         if (uvIndex >= 6) {
-            tips += "Use sunscreen. ";
+            tips = tips + "Use sunscreen. ";
         }
         if (precipitation.equalsIgnoreCase("high")) {
-            tips += "carry an umbrella. ";
+            tips = tips + "carry an umbrella. ";
         }
         if (Integer.parseInt(windSpeed) > 40) {
-            tips += "Windy conditions expected. ";
+            tips = tips + "Windy conditions expected. ";
         }
  
  
@@ -115,6 +115,14 @@ public class Main {
  
  
         // TODO: Construct your full weather report here
+        String fullReport = "Today's weather: " + todaysWeather + ". " +
+                            "Precipitation: " + precipitation + ". " +
+                            "Wind Speed: " + windSpeed + " km/h. " +
+                            "High Temp: " + highTempInt + "°C. " +
+                            "Low Temp: " + lowTempInt + "°C. " +
+                            "UV Index: " + uvIndex + ". " +
+                            "Tips: " + tips;
+        
  
  
         /*
