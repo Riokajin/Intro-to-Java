@@ -61,17 +61,20 @@ public class Main {
         tempLow = input.nextInt();
         System.out.print("Enter UV index: ");
         uvIndex = input.nextInt();
+        input.nextLine(); // Clear buffer after last nextInt()
         
         // TODO: Use loops to validate high/low temperatures and UV index       
 
         while (tempLow > tempHigh) {
             System.out.print("Low temperature cannot be higher than high temperature. Please re-enter low temperature: ");
             tempLow = input.nextInt();
+            input.nextLine(); // Clear buffer
         }        
         
         while (uvIndex < 0) {
             System.out.print("UV index cannot be negative. Please re-enter UV index: ");
             uvIndex = input.nextInt();
+            input.nextLine(); // Clear buffer
         }
         
 
