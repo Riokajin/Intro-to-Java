@@ -45,6 +45,18 @@ public class Main {
  
  
         // TODO: Prompt user and read input
+        System.out.print("Enter today's weather conditions: ");
+        todaysWeather = input.nextLine();
+        System.out.print("Enter possibility of precipitation: ");
+        precipitation = input.nextLine();
+        System.out.print("Enter wind speed (km/h): ");
+        windSpeed = input.nextLine();
+        System.out.print("Enter daily high temp: ");
+        tempHigh = input.nextInt();
+        System.out.print("Enter daily low temp: ");
+        tempLow = input.nextInt();
+        System.out.print("Enter UV index: ");
+        uvIndex = input.nextInt();
         // TODO: Use loops to validate high/low temperatures and UV index
  
  
