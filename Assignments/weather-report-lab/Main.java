@@ -14,6 +14,9 @@ public class Main {
  
  
         Scanner input = new Scanner(System.in);
+        //Step 7 
+        String again = "yes";
+        while (again.equalsIgnoreCase("yes")) {
  
  
         /*
@@ -46,13 +49,13 @@ public class Main {
  
         // TODO: Prompt user and read input
         
-        System.out.print("Enter today's weather conditions: ");
+        System.out.print("Enter today's weather conditions (ex. Sunny, Overcast etc.): ");
         todaysWeather = input.nextLine();
         System.out.print("Enter possibility of precipitation: ");
         precipitation = input.nextLine();
         System.out.print("Enter wind speed (km/h): ");
         windSpeed = input.nextLine();
-        System.out.print("Enter daily high temp: ");
+        System.out.print("Enter daily high temp in C: ");
         tempHigh = input.nextInt();
         System.out.print("Enter daily low temp: ");
         tempLow = input.nextInt();
@@ -118,8 +121,8 @@ public class Main {
         String fullReport = "Today's weather: " + todaysWeather + ". " +
                             "Precipitation: " + precipitation + ". " +
                             "Wind Speed: " + windSpeed + " km/h. " +
-                            "High Temp: " + highTempInt + "°C. " +
-                            "Low Temp: " + lowTempInt + "°C. " +
+                            "High Temp: " + highTempInt + "C. " +
+                            "Low Temp: " + lowTempInt + "C. " +
                             "UV Index: " + uvIndex + ". " +
                             "Tips: " + tips;
         
@@ -128,10 +131,11 @@ public class Main {
         /*
         STEP 6: Print the full weather report
         */
+       
  
  
         // TODO: Output your report using System.out.println()
- 
+        System.out.println(fullReport);
  
         /*
         STEP 7: Optional extra challenge
@@ -141,6 +145,12 @@ public class Main {
  
  
         // TODO: Implement loop for multiple reports
+        System.out.print("Would you like to enter another day's report? (yes/no): ");
+        again = input.nextLine();
+        }
+
+
+        
  
  
         input.close();
