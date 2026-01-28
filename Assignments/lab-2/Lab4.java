@@ -18,7 +18,7 @@ public class Lab4 {
         // ================================================
         String[] groceries = {
             // TODO: Fill in your grocery items
-            "Milk", "Eggs", 
+            "Milk", "Eggs", "Bread", "Cheese", "Apples", "Orange Juice"
         };
  
  
