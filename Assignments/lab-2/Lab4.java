@@ -26,7 +26,7 @@ public class Lab4 {
         // STEP 2: Print the array using Arrays.toString()
         // ================================================
        
- 
+        System.out.println("Groceries Array: " + Arrays.toString(groceries));
  
         // ================================================
         // STEP 3: Transfer all array items into an ArrayList
