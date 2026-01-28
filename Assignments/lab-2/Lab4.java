@@ -50,7 +50,12 @@ public class Lab4 {
         // Print the updated ArrayList
         // ================================================
         
- 
+        groceryList.add("Bananas");
+        groceryList.add("Coffee");
+
+        groceryList.remove("Eggs"); // removing by name
+
+        System.out.println("Updated Grocery List: " + groceryList);
  
  
         // ================================================
