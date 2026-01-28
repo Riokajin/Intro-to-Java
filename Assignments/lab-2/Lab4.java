@@ -35,6 +35,11 @@ public class Lab4 {
         ArrayList<String> groceryList = new ArrayList<>();
  
         // TODO: Loop through the array and add items to groceryList
+
+        for (String item : groceries) {
+            groceryList.add(item);
+        }
+        System.out.println("Grocery List: " + groceryList);
         
  
  
