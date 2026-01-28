@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Arrays;
  
  
 /*
@@ -147,6 +146,7 @@ public class ArrayModuleDemo {
         // TODO: Call sumArray and averageArray methods
         int sum = ArrayUtilities.sumArray(numbers);
         double avg = ArrayUtilities.averageArray(numbers);
+        System.out.println("Sum: " + sum + ", Average: " + avg);
  
  
  
