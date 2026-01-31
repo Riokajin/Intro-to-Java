@@ -53,7 +53,7 @@ public class Book {
 
     public void setAuthor(String author) {
         // Author validation
-        if (author == numm || author.trim().isEmpty()) {
+        if (author == null || author.trim().isEmpty()) {
             System.out.println("Invalid author. Keeping previous value.");
         } else {
             this.author = author.trim();
@@ -62,7 +62,7 @@ public class Book {
     }
 
     public void setIsbn(String isbn) {
-        if (isbn != null && (isbn.length() == 10 || isbn() == 13)) {
+        if (isbn != null && (isbn.length() == 10 || isbn.length() == 13)) {
           this.isbn = isbn;  
         } else {
             System.out.println("Invalid ISBN. Must be 10 or 13 characters. Keeping previous value.");
@@ -72,6 +72,16 @@ public class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+
+    // Display method
+    public void displayInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("ISBN: " + isbn);
+        // ? is small if/else called ternary operator
+        System.out.println("Available: " + (available ? "Yes" : "No"));
     }
 
 }
