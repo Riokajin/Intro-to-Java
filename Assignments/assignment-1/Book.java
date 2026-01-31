@@ -22,4 +22,21 @@ public class Book {
         this.available = available;
     }
 
+    // Getters
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
 }
