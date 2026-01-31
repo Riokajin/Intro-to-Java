@@ -28,7 +28,27 @@ public class LibraryManager {
 
             switch (choice) {
                 case 1:
-                    // TODO: Add a new book
+                    System.out.println("\nAdd a new book");
+
+                    System.out.print("Enter book title: ");
+                    // read text and trim spaces off of the result
+                    String title = input.nextLine().trim();
+
+                    System.out.print("Enter book author: ");
+                    String author = input.nextLine().trim();
+
+                    System.out.print("Enter book ISBN (10 or 13 characters): ");
+                    string isbn = input.nextLine().trim();
+
+                    // New books start as available
+                    boolean available = true;
+
+                    // Create the Book object using the constructor
+                    Book newBook = Book(title, author, isbn, available);
+
+                    library.add(newBook);
+
+                    Syste,.out.println("Book added successfully!");
                     break;
 
                 case 2:
