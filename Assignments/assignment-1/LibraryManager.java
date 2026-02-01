@@ -84,7 +84,21 @@ public class LibraryManager {
                     break;
 
                 case 4:
-                    // TODO: Search books by author
+                    System.out.print("\nEnter author name to search: ");
+                    String searchAuthor = input.nextLine().trim();
+
+                    boolean found = false;
+
+                    for (Book b : library) {
+                        if (b.getAuthor().equalsIgnoreCase(searchAuthor)) {
+                            b.displayInfo();
+                            found = true;
+                        }
+                    }
+
+                    if (!found) {
+                        System.out.println("No books found by that author.");
+                    }
                     break;
 
                 case 5:
