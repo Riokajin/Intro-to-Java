@@ -1,12 +1,13 @@
+// Represents a single book in the library system
 public class Book {
     
-    // Fields to store book information
+    // Fields to store book information (encapsulation)
     private String title;
     private String author;
     private String isbn;
     private boolean available;
 
-    // Default constructor
+    // Default constructor (creates an empty, available book)
     public Book() {
         this.title = "";
         this.author = "";
@@ -14,7 +15,7 @@ public class Book {
         this.available = true;
     }
 
-    // Constructor with arguments
+    // Constructor with arguments (used when adding a new book)
     public Book(String title, String author, String isbn, boolean available){
         this.title = title;
         this.author = author;
@@ -22,7 +23,7 @@ public class Book {
         this.available = available;
     }
 
-    // Getters
+    // Getters (provide read-only access to fields)
     public String getTitle() {
         return title;
     }
@@ -39,7 +40,7 @@ public class Book {
         return available;
     }
 
-    // Setters
+    // Setters with validation to protect data integrity
 
     public void setTitle(String title) {
         //Title validation
@@ -62,6 +63,7 @@ public class Book {
     }
 
     public void setIsbn(String isbn) {
+        // ISBN must be exactly 10 or 13 characters
         if (isbn != null && (isbn.length() == 10 || isbn.length() == 13)) {
           this.isbn = isbn;  
         } else {
@@ -71,16 +73,19 @@ public class Book {
     }
 
     public void setAvailable(boolean available) {
+        // Marks the book as available or checked out
         this.available = available;
     }
 
 
-    // Display method
+
+    
+    // Display method containing all details
     public void displayInfo() {
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
         System.out.println("ISBN: " + isbn);
-        // ? is small if/else called ternary operator
+        // ? is a small if/else called ternary operator
         System.out.println("Available: " + (available ? "Yes" : "No"));
     }
 

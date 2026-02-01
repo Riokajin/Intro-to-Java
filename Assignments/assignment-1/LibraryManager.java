@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+// Main program that manages the library system using a menu and ArrayList
 public class LibraryManager {
     public static void main(String[] args) {
         
@@ -12,6 +12,7 @@ public class LibraryManager {
 
         boolean running = true;
 
+        // Main menu loop (runs until user chooses Exit)
         while (running) {
             System.out.println("\n Library Menu");
             System.out.println("1. Add a new book");
@@ -26,6 +27,7 @@ public class LibraryManager {
             int choice = input.nextInt();
             input.nextLine(); // clear leftover newline
 
+            // Handle menu choices using a switch statement
             switch (choice) {
                 case 1:
                     //Add a new book
@@ -53,6 +55,7 @@ public class LibraryManager {
                     break;
 
                 case 2:
+
                     //View all books
                     System.out.println("\nAll Books");
 
@@ -66,6 +69,7 @@ public class LibraryManager {
                     break;
 
                 case 3:
+
                     //View all books currently available
                     System.out.println("\nAvailable Books");
 
@@ -84,6 +88,8 @@ public class LibraryManager {
                     break;
 
                 case 4:
+
+                    // Search for books by author name
                     System.out.print("\nEnter author name to search: ");
                     String searchAuthor = input.nextLine().trim();
 
@@ -102,13 +108,15 @@ public class LibraryManager {
                     break;
 
                 case 5:
-                    System.out.print("\nEnter ISBN of the book to check out: ")
+
+                    // Check out a book (set available to false)
+                    System.out.print("\nEnter ISBN of the book to check out: ");
                     String checkoutIsbn = input.nextLine().trim();
 
                     boolean checkedOut = false;
 
                     for (Book b : library) {
-                        if (b.isAvailable()) {
+                        if (b.getIsbn().equals(checkoutIsbn)) {
                             if (b.isAvailable()) {
                                 b.setAvailable(false);
                                 System.out.println("Book checked out successfully.");
@@ -120,15 +128,40 @@ public class LibraryManager {
                         }
                     }
 
-                    if (!checkedout) {
+                    if (!checkedOut) {
                         System.out.println("No book found with that ISBN.");
                     }
                     break;
                 
                 case 6:
-                    // TODO: Return a book
+
+                    // Return a book (set available to true)
+                    System.out.print("\nEnter ISBN of the book to return: ");
+                    String returnIsbn = input.nextLine().trim();
+
+                    boolean returned = false;
+
+                    for (Book b : library) {
+                        if (b.getIsbn().equals(returnIsbn)) {
+                            if (!b.isAvailable()) {
+                                b.setAvailable(true);
+                                System.out.println("Book returned successfully.");
+                            } else {
+                                System.out.println("That book is already marked as available.");
+                            }
+                            returned = true;
+                            break;
+                        }
+                    }
+
+                    if (!returned) {
+                        System.out.println("No book found with that ISBN.");
+                    }
                     break;
+
                 case 7:
+
+                    // Exit the program
                     running = false;
                     System.out.println("Exiting program...");
                     break;
