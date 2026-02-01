@@ -102,7 +102,27 @@ public class LibraryManager {
                     break;
 
                 case 5:
-                    // TODO: check out a book
+                    System.out.print("\nEnter ISBN of the book to check out: ")
+                    String checkoutIsbn = input.nextLine().trim();
+
+                    boolean checkedOut = false;
+
+                    for (Book b : library) {
+                        if (b.isAvailable()) {
+                            if (b.isAvailable()) {
+                                b.setAvailable(false);
+                                System.out.println("Book checked out successfully.");
+                            } else {
+                                System.out.println("That book is already checked out.");
+                            }
+                            checkedOut = true;
+                            break; // stop searching once found
+                        }
+                    }
+
+                    if (!checkedout) {
+                        System.out.println("No book found with that ISBN.");
+                    }
                     break;
                 
                 case 6:
