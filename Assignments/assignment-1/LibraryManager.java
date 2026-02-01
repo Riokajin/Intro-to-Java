@@ -28,6 +28,7 @@ public class LibraryManager {
 
             switch (choice) {
                 case 1:
+                    //Add a new book
                     System.out.println("\nAdd a new book");
 
                     System.out.print("Enter book title: ");
@@ -38,25 +39,48 @@ public class LibraryManager {
                     String author = input.nextLine().trim();
 
                     System.out.print("Enter book ISBN (10 or 13 characters): ");
-                    string isbn = input.nextLine().trim();
+                    String isbn = input.nextLine().trim();
 
                     // New books start as available
                     boolean available = true;
 
                     // Create the Book object using the constructor
-                    Book newBook = Book(title, author, isbn, available);
+                    Book newBook = new Book(title, author, isbn, available);
 
                     library.add(newBook);
 
-                    Syste,.out.println("Book added successfully!");
+                    System.out.println("Book added successfully!");
                     break;
 
                 case 2:
-                    // TODO: Display all books
+                    //View all books
+                    System.out.println("\nAll Books");
+
+                    if (library.isEmpty()) {
+                        System.out.println("No books in the library yet.");
+                    } else {
+                        for (Book b : library) {
+                            b.displayInfo();
+                        }
+                    }                    
                     break;
 
                 case 3:
-                    // TODO: Display available books
+                    //View all books currently available
+                    System.out.println("\nAvailable Books");
+
+                    boolean anyAvailable = false;
+
+                    for (Book b : library) {
+                        if (b.isAvailable()) {
+                            b.displayInfo();
+                            anyAvailable = true;
+                        }
+                    }
+
+                    if (!anyAvailable) {
+                        System.out.println("No available books at the moment.");
+                    }
                     break;
 
                 case 4:
