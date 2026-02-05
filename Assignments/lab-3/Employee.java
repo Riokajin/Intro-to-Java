@@ -22,6 +22,11 @@ public abstract class Employee {
     }
  
     // TODO 3: Declare abstract method earnings()
+    public abstract double earnings();
  
     // TODO 4: Override toString()
+    @Override
+    public String toString(){
+        return firstName + " " + lastName + " SSN: " + socialSecurityNumber;
+    }
 }
