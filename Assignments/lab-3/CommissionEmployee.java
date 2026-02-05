@@ -32,6 +32,14 @@ public void setCommissionRate(double commissionRate) {
 
  
     // TODO 7: Override earnings()
+    @Override
+    public double earnings() {
+        return getGrossSales() * getCommissionRate();
+    }
  
     // TODO 8: Override toString()
+    @Override
+    public String toString() {
+        return getFirstName() + " " + getLastName() + " SSN: " + getSocialSecurityNumber() + " Sales: " + grossSales + " Rate: " + commissionRate;
+    }
 }
