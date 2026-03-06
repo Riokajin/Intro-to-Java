@@ -19,14 +19,19 @@ public class StudentValidatorLab {
         // STEP 1:
         // Ask user to enter full name
 
- 
+        System.out.print("Enter your full name: ");
+        String fullName = scanner.nextLine();
  
         // STEP 2:
         // Validate name
         // Only letters and spaces allowed
         // Use regex with matches()
 
- 
+        if (fullName.matches("[A-Za-z ]+")) {
+            System.out.println("Valid name!");
+        } else {
+            System.out.println("Invalid name. Only letters and spaces allowed.");
+        }
  
  
         // =====================================================
