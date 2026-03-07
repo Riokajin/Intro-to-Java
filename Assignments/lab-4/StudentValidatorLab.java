@@ -129,7 +129,13 @@ public class StudentValidatorLab {
         // Split using comma
         // Print each course
  
+        String courses = "Math,Science,Java,English";
+        String[] courseList = courses.split(",");
 
+        System.out.println("Courses:");
+        for (String c : courseList) {
+            System.out.println("- " + c);
+        }
  
  
         // =====================================================
