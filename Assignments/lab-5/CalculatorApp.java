@@ -14,7 +14,11 @@ public class CalculatorApp extends Application {
     public void start(Stage primaryStage) {
  
         // Step 1: Create TextFields for input
-        
+        TextField input1 = new TextField();
+        input1.setPromptText("Enter first number");
+
+        TextField input2 = new TextField();
+        input2.setPromptText("Enter second number");
  
         // Step 2: Create Buttons for operations
         
@@ -46,26 +50,26 @@ public class CalculatorApp extends Application {
  
 //TODO:Try entering invalid input (letters) and observe program behavior (optional: you can handle exceptions for invalid input).
  
-EXPECTED OUTPUT:
-Example 1:
+// EXPECTED OUTPUT:
+// Example 1:
  
-Input1: 10
-Input2: 5
-Click '+'
-Result: 15.0
- 
- 
-Example 2:
- 
-Input1: 8
-Input2: 0
-Click '/'
-Result: Error: Division by zero
+// Input1: 10
+// Input2: 5
+// Click '+'
+// Result: 15.0
  
  
-Example 3:
+// Example 2:
  
-Input1: 7
-Input2: 3
-Click '*'
-Result: 21.0
+// Input1: 8
+// Input2: 0
+// Click '/'
+// Result: Error: Division by zero
+ 
+ 
+// Example 3:
+ 
+// Input1: 7
+// Input2: 3
+// Click '*'
+// Result: 21.0
