@@ -21,17 +21,29 @@ public class CalculatorApp extends Application {
         input2.setPromptText("Enter second number");
  
         // Step 2: Create Buttons for operations
-        
+        Button addButton = new Button("+");
+        Button subtractButton = new Button("-");
+        Button multiplyButton = new Button("*");
+        Button divideButton = new Button("/");
  
         // Step 3: Create Label for result
+        Label resultLabel = new Label("Result will appear here");
        
         // Step 4: HBox for buttons
+        HBox buttonRow = new HBox(10); // spacing of 10 pixels
+        buttonRow.getChildren().addAll(addButton, subtractButton, multiplyButton, divideButton);
        
         // Step 5: VBox main layout
+        VBox layout = new VBox(10); // spacing of 10 pixels
+        layout.getChildren().addAll(input1, input2, buttonRow, resultLabel);
        
         // Step 6: Event handling for buttons
        
         // Step 7: Create scene and show stage
+        Scene scene = new Scene(layout, 300, 200);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("JavaFX Calculator");
+        primaryStage.show();
        
     }
  
