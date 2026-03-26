@@ -38,7 +38,54 @@ public class CalculatorApp extends Application {
         layout.getChildren().addAll(input1, input2, buttonRow, resultLabel);
        
         // Step 6: Event handling for buttons
+
+        addButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText());
+                double num2 = Double.parseDouble(input2.getText());
+                double result = num1 + num2;
+                resultLabel.setText("Result: " + result);
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Error: Invalid input");
+            }
+        });
        
+        subtractButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText());
+                double num2 = Double.parseDouble(input2.getText());
+                double result = num1 - num2;
+                resultLabel.setText("Result: " + result);
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Error: Invalid input");
+            }
+        });
+
+        multiplyButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText());
+                double num2 = Double.parseDouble(input2.getText());
+                double result = num1 * num2;
+                resultLabel.setText("Result: " + result);
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Error: Invalid input");
+            }
+        });
+
+        divideButton.setOnAction(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText());
+                double num2 = Double.parseDouble(input2.getText());
+                if (num2 == 0) {
+                    resultLabel.setText("Error: Division by zero");
+                } else {
+                    double result = num1 / num2;
+                    resultLabel.setText("Result: " + result);
+                }
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Error: Invalid input");
+            }
+        });
         // Step 7: Create scene and show stage
         Scene scene = new Scene(layout, 300, 200);
         primaryStage.setScene(scene);
